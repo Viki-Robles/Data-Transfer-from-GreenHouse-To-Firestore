@@ -1,9 +1,13 @@
-import App from "./firebase";
+import DfFirebase from "./firebase";
+// import App from "./firebase";
 
 
 function main() {
-    const app = new App();
-    app.go();
+    const app = new DfFirebase();
+    app.initialize();
+    app.post({
+        flowers:'strawberry'
+    });
     console.log("done");
 }
 
