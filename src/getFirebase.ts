@@ -1,20 +1,17 @@
-import firebase from 'firebase';
-import * as functions from 'firebase-functions'
-import "firebase/firestore";
-import db from './firebase';
+import { app, credential } from "firebase-admin";
+import { firestore } from "firebase-admin";
+import * as admin from 'firebase-admin';
 
 
+admin.initializeApp({credential: admin.credential.applicationDefault(),
+  databaseURL: "https://https://fir-test-b1e99.firebaseio.com"
+  });
 
-const firebaseUrl = 'http://fir-test-b1e99.firebaseio.com'
-
-// const firebaseRef = firestore().collection('candidates').get()
-// 1. Make the API call to firestore with get method
-// 2. Firebase get function call
-
-const firebaseRef = db.collection('candidates')
+  
+const firebaseRef = firestore().collection('candidates').doc()
 
 async function getData(){
-  const doc = await firebaseRef.get();
+  const doc = await firebaseRef.get()
   if (!doc.exists) {
     console.log('No data!');
   } else {
@@ -23,7 +20,6 @@ async function getData(){
 }
 
 getData()
-
 
 
 

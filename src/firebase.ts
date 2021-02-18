@@ -1,13 +1,11 @@
-import firebase from 'firebase/app';
-import 'firebase/auth';
-import 'firebase/firestore';
-import  firestore from 'firebase/firestore'
-
+import firebase from "firebase";
+import { firestore } from "firebase-admin";
+import * as admin from 'firebase-admin';
 
 const app = {
     apiKey: "AIzaSyAf9FDSU6oB1jlyCJHR-1Fbx2elX8-u1hU",
     authDomain: "fir-test-b1e99.firebaseapp.com",
-    databaseURL: "https://fir-test-b1e99-default-rtdb.europe-west1.firebasedatabase.app",
+    databaseURL: "https://https://fir-test-b1e99.firebaseio.com",
     projectId: "fir-test-b1e99",
     storageBucket: "fir-test-b1e99.appspot.com",
     messagingSenderId: "455861716400",
@@ -15,7 +13,12 @@ const app = {
   };
   firebase.initializeApp(app);
 
+  const ad = admin.initializeApp({credential: admin.credential.applicationDefault(),
+    databaseURL: "https://https://fir-test-b1e99.firebaseio.com"
+    });
+
   const auth = firebase.auth();
 
   const db = { candidates: firestore().collection('candidates') }
-  export default { auth, db };
+  console.log(db)
+  export default { db, auth, ad };
