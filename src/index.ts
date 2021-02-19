@@ -7,25 +7,14 @@ async function main() {
     dfFirebase.initialize();
 
    
-    const dataResult = await dfGreenhouse.init();
+    const candidatesData = await dfGreenhouse.getGreenhouseData();
+    const data = candidatesData.data
 
-    function isPostedtoDf(){
-        for(let el of [dataResult]) {
-            const data = dataResult[el];
-                dfFirebase.post({
-                    data:data
-                });
+        for(let key in data) {
+            const dataResults = data[key];
+            console.log(dataResults, 'here is your data results');
+
             }
-            console.log("done");
         }
-        isPostedtoDf;
-    }
-    
+        
     main();
-    
-
-
-// dfFirebase.post({
-//     flowers:'strawberry'
-// });
-// console.log("done");
