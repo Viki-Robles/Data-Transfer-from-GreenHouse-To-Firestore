@@ -9,12 +9,15 @@ async function main() {
    
     const candidatesData = await dfGreenhouse.getGreenhouseData();
     const data = candidatesData.data
-
+   
         for(let key in data) {
-            const dataResults = data[key];
-            console.log(dataResults, 'here is your data results');
-
-            }
+            const candidateId = data[key].id;
+            dfFirebase.post({
+                flowers: candidateId
+            })
         }
-        
+    
+}
     main();
+
+    

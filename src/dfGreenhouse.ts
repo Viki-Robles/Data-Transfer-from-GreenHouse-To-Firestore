@@ -1,4 +1,3 @@
-import {dbInterface, Candidate} from './candidate';
 import axios, {AxiosResponse} from "axios";
 
 const greenhouseAuth = 'Basic NGMyYTQwN2I4OWRjNjhlNzk2NThiNGMyYjMxNmZmNDMtMzo=';
