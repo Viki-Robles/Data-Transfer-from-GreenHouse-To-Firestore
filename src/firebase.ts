@@ -20,7 +20,13 @@ class DfFirebase {
     const docRef = this.db.collection('candidates').doc('first_name');
     await docRef.set(data);
   }
+
+  async get(data: any) {
+    const getdoc = this.db.collection('candidates').doc('first_name');
+    await getdoc.get(data);
+      }
 }
+
 
 
 export default DfFirebase;
