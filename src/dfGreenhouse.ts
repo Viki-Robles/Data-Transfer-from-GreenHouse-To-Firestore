@@ -1,6 +1,6 @@
 import axios, {AxiosResponse} from "axios";
 
-const greenhouseAuth = 'Basic NGMyYTQwN2I4OWRjNjhlNzk2NThiNGMyYjMxNmZmNDMtMzo=';
+const greenhouseAuth = 'Basic ';
 const greenhouseUrl = 'https://harvest.greenhouse.io';
 
 
